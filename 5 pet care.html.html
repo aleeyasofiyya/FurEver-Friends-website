@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Top 10 Most Popular Pets - Combined Post</title>
+    
+    <style>
+        /* BASE STYLES */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f3e5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: auto; 
+        }
+
+        h1 {
+            color: #6A1B9A;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #7B1FA2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #4A148C;
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-align: left;
+            font-size: 1.4em; /* Added for clarity */
+        }
+
+        p {
+            color: #4A148C;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        /* IMAGE STYLES - The key to resizing */
+        .header-image {
+            width: 100%;
+            max-width: 700px;
+            height: auto; /* IMPORTANT for maintaining proportions */
+            border-radius: 8px;
+            margin: 20px auto 30px auto;
+            display: block;
+            border: 3px solid #8E24AA;
+            /* Note: object-fit: cover; would crop the image if a fixed height was set. */
+            /* Since height is auto, 'cover' may not be needed here. */
+        }
+
+        /* Styling for images within pet-item sections (like your single image example) */
+        .pet-item-image {
+            /* Sets a fixed width/max-width */
+            max-width: 400px;
+            width: 100%;
+            /* Sets the height to adjust automatically based on the width to AVOID CROPPING */
+            height: auto; 
+            
+            border-radius: 6px;
+            margin: 15px auto;
+            display: block;
+            border: 2px solid #9C27B0;
+            /* Using 'contain' will ensure the whole image is visible, leaving space if needed. 
+               Using 'auto' on height is often enough, but 'contain' is useful if you
+               switch back to a fixed height. */
+            object-fit: contain; 
+        }
+        
+        /* LAYOUT STYLES */
+        .pet-item {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #8E24AA;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease, transform 0.2s;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            background-color: #6A1B9A;
+            transform: translateY(-2px);
+        }
+
+        .clear {
+            clear: both;
+            height: 1px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>5 Pet Care Myths You Should Stop Believing 🤯</h1>
+    
+    <img 
+        src="myths.jpg" 
+        alt="Pet care myths collage" 
+        class="header-image"
+    >
+
+    <p>
+        🚫 Don't fall for old pet tales! We're busting the internet's most common myths about cats and dogs. 🐶🐱  
+        Learn what’s fact and what’s fiction — and discover smarter, safer ways to care for your furry friends. 💕
+    </p>
+
+    <h2>🐾 Busting the Biggest Pet Myths!</h2>
+    
+    <div class="pet-item">
+        <h3>1. 🐕 A Cold, Wet Nose Doesn't Mean Health</h3>
+        <p>
+            ❄️ While often a good sign, a wet nose doesn't guarantee good health.  
+            Body temperature and hydration are better indicators — a sick dog can still have a cold nose, 
+            while a healthy dog’s nose might dry out after a nap.
+        </p>
+        <img 
+            src="nose.webp" 
+            alt="Dog nose close-up" 
+            class="pet-item-image"
+        >
+    </div>
+    
+    <div class="pet-item">
+        <h3>2. 🦷 Kibble Doesn't Clean Teeth</h3>
+        <p>
+            🍪 Dry kibble is like crackers — it crumbles instead of scrubbing!  
+            Dental chews, daily brushing, and professional cleanings are the best ways to prevent plaque and tartar buildup.
+        </p>
+        <img 
+            src="kibble.webp" 
+            alt="Dry pet kibble" 
+            class="pet-item-image"
+        >
+    </div>
+
+    <div class="pet-item">
+        <h3>3. 🥛 Cats Need Milk? NO!</h3>
+        <p>
+            🚫 Most adult cats are lactose intolerant!  
+            Giving them milk can cause stomach upset, vomiting, or diarrhea.  
+            💧 Water is the healthiest (and safest) drink your cat needs.
+        </p>
+        <img 
+            src="cat milk.webp" 
+            alt="Cat near milk bowl" 
+            class="pet-item-image"
+        >
+    </div>
+    
+    <div class="pet-item">
+        <h3>4. 🧠 You *Can* Teach an Old Dog New Tricks!</h3>
+        <p>
+           💪 Absolutely true! Older dogs often learn faster than puppies because they’re calmer and more focused.  
+           Training keeps their brains active and strengthens your bond. 🐾
+        </p>
+        <img 
+            src="old dog.jpg" 
+            alt="Senior dog training" 
+            class="pet-item-image"
+        >
+    </div>
+    
+    <div class="pet-item">
+        <h3>5. 😝 A Dog’s Mouth Isn’t Cleaner Than a Human's</h3>
+        <p>
+           🦠 Dog saliva has bacteria made for *dogs*, not people.  
+           It may contain E. coli or salmonella — so while dog kisses are cute, they’re not exactly germ-free! 💋🐶
+        </p>
+        <img 
+            src="saliva.jpg" 
+            alt="Dog licking face" 
+            class="pet-item-image"
+        >
+    </div>
+
+    <a href="file:///C:/Users/Irsyad%20Fattah/OneDrive/Desktop/aleeya%20f1/FurEver%20Friends.html" class="cta-button" target="_blank">
+        Explore MORE about PETS at our website!
+    </a>
+
+    <div class="clear"></div> 
+</div> 
+</body>
+</html>

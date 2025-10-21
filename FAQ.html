@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurEver Friends 🐾 | Services</title>
+
+    <style>
+        body {
+            font-family: "Cherry Bomb One", sans-serif;
+            margin: 0;
+            background-color: #f9f5ff;
+        }
+
+        /* HEADER */
+        .top-header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #5e1d99;
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .portal-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5e1d99;
+        }
+   
+    /* 🐾 Bouncing Paw Animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-15px);
+      }
+      60% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .bouncing-paws {
+      display: inline-block;
+      animation: bounce 1.5s infinite;
+      font-size: 28px;
+      margin-left: 5px;
+    }
+
+    /* --- 2. MAIN NAVIGATION BAR --- */
+    .main-nav {
+      background-color: #8A2BE2; /* Vibrant Purple */
+      padding: 0 5%;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .main-nav a:hover {
+      background-color: #5e1d99;
+    }
+
+    /* --- Main FAQ Content Styling --- */
+    .faq-container {
+        padding: 50px 20px;
+        max-width: 900px; 
+        margin: 0 auto;
+    }
+
+    .faq-container h2 {
+        text-align: center;
+        color: #4b0082;
+        margin-bottom: 45px;
+        font-size: 36px;
+        position: relative;
+    }
+
+    .faq-container h2::after { 
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #e0ccff;
+        border-radius: 2px;
+    }
+
+    .faq-section {
+        margin-bottom: 50px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+        padding: 25px;
+    }
+
+    .faq-section h3 {
+        color: #4b0082; 
+        font-size: 24px;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #e0ccff; 
+    }
+
+    /* Style for each individual FAQ item */
+    .faq-item {
+        margin-bottom: 15px;
+    }
+
+    /* Style for the question button (Accordion look) */
+    .faq-question {
+        background-color: #f0e6ff; /* Light purple background */
+        color: #4b0082; 
+        cursor: pointer;
+        padding: 18px 25px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px; 
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hover effect on the question button */
+    .faq-question:hover {
+        background-color: #e0ccff; 
+        color: #330066; 
+    }
+
+    /* Arrow icon for questions */
+    .faq-question::after {
+        content: '▼'; /* Down arrow */
+        font-size: 16px;margin-left: 10px;
+        transition: transform 0.3s ease; /* Animation for arrow rotation */
+    }
+
+    /* Rotate arrow when question is active/open */
+    .faq-question.active::after {
+        transform: rotate(180deg); /* Up arrow when active */
+    }
+
+    /* Style for the answer text (The part that animates) */
+    .faq-answer {
+        padding: 0 25px;
+        background-color: #fff;
+        max-height: 0; /* Key for collapse animation - initially hidden */
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth transition */
+        border-left: 3px solid #6a1ba3; 
+        border-right: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .faq-answer.open { /* Class added by JS when answer is open */
+        /* max-height will be set dynamically by JavaScript */
+        padding: 15px 25px; /* Reveal padding */
+    }
+
+    .faq-answer p {
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+        color: #555;
+    }
+
+    /* Separator line style */
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #b58ce8, rgba(0, 0, 0, 0)); 
+        margin: 50px 0;
+    }
+        
+    /* --- 4. FOOTER --- */
+    .site-footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    </style>
+    </head>
+	
+ <body>
+  <header class="top-header">
+    <img src="Neko.png" alt="Website Logo" class="logo">
+    <span class="portal-title">
+      FurEver Friends <span class="bouncing-paws">🐾</span>
+    </span>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="FurEver Friends.html">HOME</a></li>
+      <li><a href="Services.html">SERVICES</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="Contact Us.html">CONTACT US</a></li>
+    </ul>
+  </nav>
+    
+    <main class="faq-container">
+        <h2>Frequently Asked Questions 🐾</h2>
+
+        <section class="faq-section">
+            <h3>General Questions</h3>
+            
+            <div class="faq-item">
+                <button class="faq-question">❓ What is FurEver Friends?</button>
+                <div class="faq-answer">
+                    <p>FurEver Friends is your one-stop online resource connecting animal lovers with top-rated pet shops, salons, and a community for general pet welfare information. We aim to make finding the best for your pet easy and enjoyable!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">❓ How do I contact the customer support team?</button>
+                <div class="faq-answer">
+                    <p>For site issues, feedback, or general inquiries, please navigate to the "Contact Us" page and send us a message through the provided form. We aim to respond within 24-48 business hours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">❓ Is FurEver Friends available in all regions?</button>
+                <div class="faq-answer">
+                    <p>Currently, FurEver Friends primarily serves specific regions. Please check our "Services" page for a list of areas where our listed shops and salons operate.</p>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section class="faq-section">
+            <h3>Pet Shop & Products</h3>
+
+            <div class="faq-item">
+                <button class="faq-question">🛒 Are the products sold directly by FurEver Friends?</button>
+                <div class="faq-answer">
+                    <p>No, FurEver Friends acts as a directory and platform. We list trusted, external pet shops. All product purchases, shipping, and return policies are managed directly by the individual pet shop you choose.</p>
+                </div>
+            </div>
+
+            <div class="faq-item"><button class="faq-question">📦 Where can I find the specific shop's return or exchange policy?</button>
+                <div class="faq-answer">
+                    <p>Each shop's policy will be available on their respective website, which you can access via the links on our Services page. We highly recommend reviewing their policies before making a purchase.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">💰 Do you offer any discounts or loyalty programs?</button>
+                <div class="faq-answer">
+                    <p>While FurEver Friends doesn't directly offer discounts, many of our partner shops and salons may have their own promotions. Check their individual pages or sign up for their newsletters for deals!</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="faq-section">
+            <h3>Pet Salon & Grooming Services</h3>
+
+            <div class="faq-item">
+                <button class="faq-question">✂️ Do the salons handle pets with anxiety or special needs?</button>
+                <div class="faq-answer">
+                    <p>Many of our listed salons are highly experienced in handling anxious, elderly, or special needs pets. We strongly recommend calling the salon *before* booking to discuss your pet's specific requirements and ensure they can provide the best care.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">🧼 What is the best way to book an appointment?</button>
+                <div class="faq-answer">
+                    <p>The fastest and most reliable way to book an appointment is usually by calling the pet salon directly. Some salons also offer convenient online booking through their own websites.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">🗓️ How far in advance should I book grooming services?</button>
+                <div class="faq-answer">
+                    <p>For popular salons or during peak seasons (holidays, summer), it's advisable to book at least 1-2 weeks in advance. For regular maintenance, a few days' notice is often sufficient.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2025 FurEver Friends. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Get all the FAQ question buttons
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                // Get the next sibling element, which is the answer div
+                const answer = question.nextElementSibling;
+                            
+                // Toggle the 'active' class on the question button (for arrow rotation)
+                question.classList.toggle('active');
+
+                // Toggle the 'open' class on the answer div for animation
+                if (answer.classList.contains('open')) {
+                    answer.classList.remove('open');
+                    answer.style.maxHeight = null; // Reset max-height
+                } else {
+                    answer.classList.add('open');
+                    // Set max-height dynamically to the actual scroll height for smooth animation
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

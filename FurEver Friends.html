@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurEver Friends 🐾 | Services</title>
+
+    <style>
+        body {
+            font-family: "Cherry Bomb One", sans-serif;
+            margin: 0;
+            background-color: #f9f5ff;
+        }
+
+        /* HEADER */
+        .top-header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #5e1d99;
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .portal-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5e1d99;
+        }
+   
+    /* 🐾 Bouncing Paw Animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-15px);
+      }
+      60% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .bouncing-paws {
+      display: inline-block;
+      animation: bounce 1.5s infinite;
+      font-size: 28px;
+      margin-left: 5px;
+    }
+
+    /* --- 2. MAIN NAVIGATION BAR --- */
+    .main-nav {
+      background-color: #8A2BE2; /* Vibrant Purple */
+      padding: 0 5%;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .main-nav a:hover {
+      background-color: #5e1d99;
+    }
+
+    /* --- 3. MAIN CONTENT AREA --- */
+    .main-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    /* HERO BANNER */
+    .hero-banner {
+      grid-column: 1 / 3;
+      background-color: #f2e6ff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+	
+    /* IMAGE STYLES - The key to resizing */
+    .header-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto; /* IMPORTANT for maintaining proportions */
+      border-radius: 8px;
+      margin: 20px auto 30px auto;
+      display: block;
+      border: 3px solid #8E24AA;
+      /* Note: object-fit: cover; would crop the image if a fixed height was set. */
+      /* Since height is auto, 'cover' may not be needed here. */ 
+    }
+
+    /* LEFT COLUMN (Pet Shop) */
+    .left-column {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-column h3 {
+      color: #5e1d99;
+      margin-top: 0;
+    }
+
+    .left-column a {
+      color: #8A2BE2;
+      text-decoration: none;
+    }
+
+    .left-column a:hover {
+      text-decoration: underline;
+    }
+
+    /* QUICK LINKS COLUMN */
+    .quick-links-column {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .quick-links-column h3 {
+      color: #5e1d99;
+    }
+
+    .quick-link-item {
+      display: block;
+      text-align: center;
+      background-color: #8A2BE2;
+      color: white;
+      text-decoration: none;
+      padding: 15px 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .quick-link-item:hover {
+      background-color: #5e1d99;
+    }
+
+    /* --- 4. FOOTER --- */
+    .site-footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-header">
+    <img src="Neko.png" alt="Website Logo" class="logo">
+    <span class="portal-title">
+      FurEver Friends <span class="bouncing-paws">🐾</span>
+    </span>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="FurEver Friends.html">HOME</a></li>
+      <li><a href="Services.html">SERVICES</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="Contact Us.html">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-container">
+
+    <div class="hero-banner">
+      <h2>Hey There, Animal Lover!</h2>
+	  
+	  <img 
+        src="furrr.jpg" 
+        alt="A vibrant collage of the top 10 most popular pets" 
+        class="header-image"
+    >
+    </div>
+
+    <div class="left-column">
+      <h3>PET SHOP</h3>
+      <p>1. <a href="https://www.petloverscentre.com.my/" target="_blank">Pet Lovers Centre</a></p>
+      <p>2. <a href="https://petswonderland.com/" target="_blank">Pets Wonderland</a></p>
+      <p>3. <a href="https://www.klook.com/en-MY/activity/116271-just-farm-just-pets-megastore-ticket/" target="_blank">Just Pets Megastore</a></p>
+      <p>4. <a href="https://www.hyperpetscentre.com/" target="_blank">Hyper Pets Centre</a></p>
+      <p>5. <a href="https://exoreptiles.com/" target="_blank">Exo Reptiles</a></p>
+      <p>6. <a href="https://www.beebiesmart.com/" target="_blank">Beebies Shrimp Aquatic Pets</a></p>
+      <p>7. <a href="https://petico.my/" target="_blank">Petico.my</a></p>
+      <p>8. <a href="https://www.petstacy.com/" target="_blank">Petstacy</a></p>
+      <p>9. <a href="https://www.88petsmart.com/" target="_blank">88 PetSmart</a></p>
+      <p>10. <a href="https://www.nilufar.com.my/cms/" target="_blank">Nilufar Pet & Aquatic</a></p>
+    </div>
+
+    <div class="quick-links-column">
+      <h3>Pet Lovers’ Favourites</h3>
+      <a href="Top 10 Most Popular Pets.html" class="quick-link-item">Top 10 Most Popular Pets🐾</a>
+      <a href="Benefits Of Pets.html" class="quick-link-item">🐶 Hidden Benefits of Having a Pet</a>
+      <a href="world record.html" class="quick-link-item">🐾 Record-Breaking Pets of the World</a>
+      <a href="file:///C:/Users/Irsyad%20Fattah/OneDrive/Desktop/aleeya%20f1/5%20pet%20care.html.html" class="quick-link-item">5 Pet Care Myths You Should Stop Believing 🤯</a>
+      <a href="101.html" class="quick-link-item">Decoding the Woof and Meow: Pet Body Language 101 🤔</a>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 FurEver Friends. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

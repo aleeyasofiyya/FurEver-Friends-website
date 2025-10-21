@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurEver Friends 🐾 | Services</title>
+
+    <style>
+        body {
+            font-family: "Cherry Bomb One", sans-serif;
+            margin: 0;
+            background-color: #f9f5ff;
+        }
+
+        /* HEADER */
+        .top-header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #5e1d99;
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .portal-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5e1d99;
+        }
+   
+    /* 🐾 Bouncing Paw Animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-15px);
+      }
+      60% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .bouncing-paws {
+      display: inline-block;
+      animation: bounce 1.5s infinite;
+      font-size: 28px;
+      margin-left: 5px;
+    }
+   
+        /* --- 2. MAIN NAVIGATION BAR --- */
+        .main-nav {
+            background-color: #8A2BE2;
+            padding: 0 5%;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .main-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .main-nav a:hover {
+            background-color: #5e1d99;
+        }
+		
+        /* --- 3. Contact Page Layout (CRITICAL UPDATES for 3 Columns) --- */
+        .contact-container {
+            max-width: 1300px; 
+            margin: 40px auto;
+            padding: 20px;
+            display: flex; 
+            gap: 30px; 
+            align-items: flex-start;
+            justify-content: center; 
+            flex-wrap: wrap; /* KEY FIX: Allows children, like H2, to wrap to the next line */
+        }
+
+        h2 {
+            text-align: center;
+            color: #4b0082;
+            font-size: 36px;
+            margin-bottom: 30px;
+            width: 100%; /* Forces the heading to take up full width */
+        }
+
+        /* --- POSTER (Image) Column Styles --- */
+        .poster {
+            flex: 1; /* Takes an equal share of space */
+            min-width: 300px; 
+            background-color: #f2e9ff !important;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .poster img {
+            max-width: 100%; 
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
+        }
+        
+        .poster p {
+            font-style: italic;
+            color: #5b2e91;
+            font-size: 14px;
+        }
+        .poster h3 {
+            color: #4a148c;
+            margin-top: 15px;
+        }
+
+        /* --- Form & Info Wrapper (Grouping the last two columns) --- */
+        .contact-form-and-info-wrapper {
+            flex: 2; /* Takes twice the space of the poster column */
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+
+        /* --- Contact Form Styles --- */
+        .contact-form-section {
+            flex: 2; /* Takes 2/3 of the WRAPPER space (the middle column) */
+            min-width: 300px; 
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .contact-form-section h3 {
+            color: #5e1d99;
+            border-bottom: 2px solid #e0ccff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        .form-group input,
+        .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; transition: border-color 0.3s; }
+        .form-group input:focus,
+        .form-group textarea:focus { border-color: #4b0082; outline: none; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        .submit-button {
+            background-color: #5e1d99; 
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.1s;
+        }
+
+        .submit-button:hover { background-color: #6a1ba3; }
+        .submit-button:active { transform: scale(0.98); } 
+
+        /* --- Info Section Styles --- */
+        .contact-info-section {
+            flex: 1; /* Takes 1/3 of the WRAPPER space (the right column) */
+            min-width: 280px; 
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        
+        .contact-info-section h3 {
+            color: #5e1d99;
+            border-bottom: 2px solid #e0ccff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-item { display: flex; align-items: flex-start; margin-bottom: 20px; }
+        .info-icon { color: #6a1ba3; font-size: 24px; margin-right: 15px; width: 30px; text-align: center; }
+        .info-text a { color: #4b0082; text-decoration: none; }
+        .info-text a:hover { text-decoration: underline; }
+
+        /* --- Media Query for Mobile (Ensures stacking on small screens) --- */
+        @media (max-width: 1200px) {
+            .contact-container {
+                flex-direction: column; 
+                align-items: center;
+            }
+            .poster {
+                flex: 0 0 100%; 
+                max-width: 80%; 
+                margin-bottom: 30px;
+            }
+            .contact-form-and-info-wrapper {
+                flex-direction: column; 
+                flex: 0 0 90%; 
+            }
+            .contact-form-section, 
+            .contact-info-section {
+                flex: 0 0 100%; 
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 10px;
+            }
+            .poster,
+            .contact-form-and-info-wrapper {
+                 max-width: 100%;
+            }
+        }
+
+
+        /* --- Footer --- */
+        .site-footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+		
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <img src="Neko.png" alt="Website Logo" class="logo">
+        <span class="portal-title">
+            FurEver Friends <span class="bouncing-paws">🐾</span>
+        </span>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="FurEver Friends.html">HOME</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Contact Us.html" class="active-link">CONTACT US</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact-container">
+        <h2>We're Here to Help!</h2>
+
+        <div class="poster">
+		    <h3 style="color: #4a148c; margin-top: 15px;">
+            FurEver Friends: Where Every Paw Tells a Story
+            </h3>
+
+            <img src="Just A Poster.png" alt="FurEver Friends Poster" style="width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+
+            <p style="color: #5b2e91; font-size: 14px; line-height: 1.6;">
+                Join our journey of adorable moments and happy tails! 🐾<br>
+                Follow @FurEverFriends on Instagram to see heartwarming photos...<br>
+                Every post shares the love between humans and their furry friends. 💖
+            </p>
+        </div>
+
+        <div class="contact-form-and-info-wrapper">
+
+            <section class="contact-form-section">
+                <h3>Send Us a Message</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Full Name *</label>
+                        <input type="text" id="name" name="full_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email Address *</label>
+                        <input type="email" id="email" name="email_address" required>
+                    </div>
+
+                    <div class="form-group"><label for="subject">What's this about?</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Submit Inquiry</button>
+                </form>
+            </section>
+
+            <section class="contact-info-section">
+                <h3>Direct Contact & Support</h3>
+
+                <p style="font-size: 0.9em;">If your inquiry is urgent or relates to a business listing, please use the direct methods below.</p>
+
+                <div class="info-item">
+                    <span class="info-icon">📧</span>
+                    <div class="info-text">
+                        <strong>Email Support</strong>
+                        <p><a href="aleeyasofiyya2104@gmail.com">aleeyasofiyya2104@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <div class="info-text">
+                        <strong>Phone (Business Hours)</strong>
+                        <p><a href="tel:+60196541002">+60 196541002</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div class="info-text">
+                        <strong>Head Office (Not for Public)</strong>
+                        <p>
+                           28, Jalan Rhu 2/1,
+                           Bandar Hillpark,
+                           42300, Bandar Puncak Alam,
+                           Selangor</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-icon">⏰</span>
+                    <div class="info-text">
+                        <strong>Hours of Operation</strong>
+                        <p>Mon - Fri: 8:00 AM to 2:30 PM</p>
+                        <p>Sat - Sun: Closed</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 FurEver Friends. All Rights Reserved. Thank you for visiting!</p>
+    </footer>
+
+</body>
+</html>
